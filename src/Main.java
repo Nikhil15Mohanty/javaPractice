@@ -89,6 +89,20 @@ class PayrollSystem{
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Main class");
+        PayrollSystem payrollSystem = new PayrollSystem();
+        FullTimeEmployee emp1 = new FullTimeEmployee("Nikhil",1,35000);
+        PartTimeEmployee emp2 = new PartTimeEmployee("Satya",2,6,250);
+
+        System.out.println("Inserting two Employees details");
+        payrollSystem.addEmployee(emp1);
+        payrollSystem.addEmployee(emp2);
+        System.out.println();
+        System.out.println("Details of the Employees");
+        payrollSystem.displayEmployees();
+
+        System.out.println();
+        System.out.println("Removing the second employee from the list");
+        payrollSystem.removeEmployee(2);
+        payrollSystem.displayEmployees();
     }
 }
